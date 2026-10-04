@@ -25,8 +25,8 @@
 
   <style>
     :root {
-      --blush: #F9EAEA;        /* page */
-      --white: #FFFDFC;        /* card, like the price list */
+      --blush: #F9EAEA;        /* page, like the price list */
+      --white: #FFFDFC;        /* booking card */
       --pill: #F7DADA;         /* price-tag pink */
       --pill-hover: #F3CFCF;
       --line: #B8955A;         /* gold rule */
@@ -34,7 +34,8 @@
       --ink: #3D3133;
 
       --font: "Marcellus", "Didot", "Bodoni 72", Georgia, serif;
-      --column: min(100% - 32px, 400px);
+      --column: min(100% - 40px, 400px);
+      --gap: 18px;             /* between buttons */
       --ease-out: cubic-bezier(.22, .8, .3, 1);
     }
 
@@ -64,32 +65,20 @@
       align-items: center;
     }
 
-    /* the flower artwork, below the links */
-    .bouquet {
-      display: block;
-      width: min(100%, 330px);
-      height: auto;
-      margin: 28px auto 0;
-      opacity: .85;
-      pointer-events: none;
-      user-select: none;
-    }
-
     /* ---------- content ---------- */
     main {
       position: relative;
       z-index: 1;
       width: var(--column);
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 0 20px;
+      padding: 36px 0 0;
     }
 
     .logo {
       width: 100%;
-      max-width: 340px;
+      max-width: 232px;
       margin: 0;
     }
     .logo img {
@@ -98,22 +87,14 @@
       height: auto;
     }
 
-    .tagline {
-      margin: 14px 0 0;
-      font-size: 1rem;
-      letter-spacing: .08em;
-      color: var(--ink);
-      opacity: .75;
-    }
-
     .links {
       list-style: none;
-      margin: 32px 0 0;
+      margin: 34px 0 0;
       padding: 0;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: var(--gap);
     }
     .links li { display: contents; }
 
@@ -122,8 +103,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 9px 14px;
+      min-height: 58px;
+      padding: 10px 18px;
       border-radius: 999px;
       text-decoration: none;
       text-align: center;
@@ -131,7 +112,7 @@
       background: var(--pill);
       box-shadow:
         0 1px 0 rgba(255, 255, 255, .7) inset,
-        0 6px 16px -8px rgba(201, 120, 125, .55);
+        0 8px 18px -8px rgba(201, 120, 125, .55);
       transition: background-color .2s ease, box-shadow .2s ease, transform .15s ease;
       -webkit-tap-highlight-color: transparent;
     }
@@ -139,7 +120,7 @@
       background: var(--pill-hover);
       box-shadow:
         0 1px 0 rgba(255, 255, 255, .7) inset,
-        0 8px 20px -8px rgba(201, 120, 125, .7);
+        0 10px 22px -8px rgba(201, 120, 125, .7);
     }
     .link:active { transform: scale(.98); }
     .link:focus-visible {
@@ -148,24 +129,16 @@
     }
 
     .title {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
       font-size: 1.0625rem;
       line-height: 1.25;
-    }
-    .title svg {
-      width: 19px;
-      height: 19px;
-      flex: none;
-      color: var(--gold);
+      letter-spacing: .01em;
     }
     .sub {
       font-size: .8125rem;
-      letter-spacing: .02em;
+      letter-spacing: .03em;
       opacity: .72;
       line-height: 1.3;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     .link--wide { grid-column: 1 / -1; }
@@ -173,14 +146,14 @@
     /* booking: white card with a gold double rule, like the price list */
     .link--book {
       grid-column: 1 / -1;
-      min-height: 78px;
-      margin-bottom: 4px;
+      min-height: 80px;
+      margin-bottom: 6px;
       background: var(--white);
       box-shadow:
         0 0 0 1.5px var(--line),
         inset 0 0 0 4px var(--white),
         inset 0 0 0 5px rgba(184, 149, 90, .35),
-        0 10px 26px -12px rgba(201, 120, 125, .6);
+        0 12px 28px -12px rgba(201, 120, 125, .6);
     }
     .link--book:hover {
       background: #FFF7F6;
@@ -188,57 +161,54 @@
         0 0 0 2px var(--line),
         inset 0 0 0 4px #FFF7F6,
         inset 0 0 0 5px rgba(184, 149, 90, .5),
-        0 12px 30px -12px rgba(201, 120, 125, .7);
+        0 14px 32px -12px rgba(201, 120, 125, .7);
     }
-    .link--book .title { font-size: 1.375rem; gap: 11px; }
-    .link--book .title svg { width: 22px; height: 22px; }
+    .link--book .title { font-size: 1.375rem; letter-spacing: .02em; }
     .link--book .sub { font-size: .875rem; }
 
-    footer {
+    /* ---------- the rose spray: one drawn element, tucked into the corner ---------- */
+    .spray-wrap {
+      align-self: flex-end;
+      margin-top: auto;
+      padding-top: 32px;
+      width: min(78%, 330px);
+    }
+    .spray {
       position: relative;
-      z-index: 1;
-      padding: 0 16px calc(28px + env(safe-area-inset-bottom));
-      text-align: center;
-      font-size: .875rem;
-      line-height: 1.7;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 -12px 0 0;
+      opacity: .9;
+      pointer-events: none;
+      user-select: none;
     }
-    footer a {
-      color: var(--ink);
-      text-decoration: none;
-      opacity: .78;
-    }
-    footer a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
-    footer a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+    .spray--top { display: none; }
 
-    /* ---------- entrance: the bouquet opens out from its centre ---------- */
+    /* ---------- entrance: content settles, then the spray develops from the corner ---------- */
     @media (prefers-reduced-motion: no-preference) {
-      .bouquet {
-        -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
-                mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
-        -webkit-mask-repeat: no-repeat;
-                mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-                mask-position: center;
-        -webkit-mask-size: 0% 0%;
-                mask-size: 0% 0%;
-        animation: open 2.4s var(--ease-out) .5s forwards;
-      }
-
-      .logo, .tagline, .links, footer {
+      main {
         opacity: 0;
-        animation: rise .9s var(--ease-out) forwards;
+        animation: rise .9s var(--ease-out) .1s forwards;
       }
-      .logo    { animation-delay: .1s; }
-      .tagline { animation-delay: .3s; }
-      .links   { animation-delay: .45s; }
-      footer   { animation-delay: .8s; }
-
-      @keyframes open {
-        to { -webkit-mask-size: 300% 300%; mask-size: 300% 300%; }
+      .spray {
+        /* a soft wipe that grows out of the corner where the stems meet */
+        -webkit-mask-image: linear-gradient(315deg, #000 40%, transparent 75%);
+                mask-image: linear-gradient(315deg, #000 40%, transparent 75%);
+        -webkit-mask-size: 300% 300%;
+                mask-size: 300% 300%;
+        -webkit-mask-position: 0% 0%;
+                mask-position: 0% 0%;
+        animation: develop 1.9s var(--ease-out) .5s forwards;
       }
       @keyframes rise {
-        from { opacity: 0; transform: translateY(8px); filter: blur(3px); }
-        to   { opacity: 1; transform: none; filter: none; }
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: none; }
+      }
+      @keyframes develop {
+        from { -webkit-mask-position: 0% 0%; mask-position: 0% 0%; }
+        to   { -webkit-mask-position: 100% 100%; mask-position: 100% 100%; }
       }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -247,8 +217,32 @@
 
     @media (min-width: 640px) {
       main { padding-top: 48px; }
-      .logo { max-width: 380px; }
-      .bouquet { width: 380px; }
+      .logo { max-width: 300px; }
+      .links { margin-top: 40px; }
+    }
+
+    /* desktop: the spray sits in the corner of the window, with its mirror at the top */
+    @media (min-width: 960px) and (min-height: 640px) {
+      .page { justify-content: center; }
+      main { padding: 40px 0 72px; }
+      .spray-wrap { display: contents; }
+      .spray {
+        position: fixed;
+        right: -48px;
+        bottom: -40px;
+        width: 560px;
+        margin: 0;
+      }
+      .spray--top {
+        display: block;
+        right: auto;
+        bottom: auto;
+        left: -48px;
+        top: -40px;
+        width: 380px;
+        transform: rotate(180deg);
+        opacity: .75;
+      }
     }
   </style>
 </head>
@@ -262,86 +256,47 @@
         </picture>
       </h1>
 
-      <p class="tagline">Fra klassisk til kreativt</p>
-
       <ul class="links">
         <li>
           <a class="link link--book" href="https://booksalon.no/paris-nails">
-            <span class="title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3.5" y="5" width="17" height="15.5" rx="3"/>
-                <path d="M3.5 10h17M8 3v4M16 3v4"/>
-                <path d="M12 12.6l.95 1.9 2.1.3-1.5 1.5.35 2.1-1.9-1-1.9 1 .35-2.1-1.5-1.5 2.1-.3z" fill="currentColor" stroke="none"/>
-              </svg>
-              Bestill time
-            </span>
+            <span class="title">Bestill time</span>
             <span class="sub">Se ledige timer hos Booksalon</span>
           </a>
         </li>
         <li>
-          <a class="link" href="tel:+4740327078">
-            <span class="title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M6.6 3.5h2.6l1.4 4.1-2 1.4a12 12 0 0 0 6.4 6.4l1.4-2 4.1 1.4v2.6a2 2 0 0 1-2.2 2A16.4 16.4 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/>
-              </svg>
-              Ring oss
-            </span>
-            <span class="sub">403 27 078</span>
+          <a class="link link--wide" href="tel:+4740327078">
+            <span class="title">403 27 078</span>
+            <span class="sub">Ring oss</span>
           </a>
         </li>
         <li>
-          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Paris%20Nails%2C%20Grova%2040%2C%205600%20Norheimsund">
-            <span class="title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/>
-                <circle cx="12" cy="10" r="2.4"/>
-              </svg>
-              Finn oss
-            </span>
-            <span class="sub">Grova 40</span>
+          <a class="link link--wide" href="https://www.google.com/maps/search/?api=1&amp;query=Paris%20Nails%2C%20Grova%2040%2C%205600%20Norheimsund">
+            <span class="title">Grova 40, 5600 Norheimsund</span>
+            <span class="sub">Åpne i Google Maps</span>
           </a>
         </li>
         <li>
           <a class="link" href="https://www.instagram.com/parisnails.norheimsund/">
-            <span class="title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
-                <circle cx="12" cy="12" r="3.9"/>
-                <circle cx="17.1" cy="6.9" r=".6" fill="currentColor"/>
-              </svg>
-              Instagram
-            </span>
+            <span class="title">Instagram</span>
           </a>
         </li>
         <li>
           <a class="link" href="https://www.facebook.com/ParisNails.Norheimsund/">
-            <span class="title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14.5 20.5v-7h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4a20 20 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H9v3h2.5v7"/>
-              </svg>
-              Facebook
-            </span>
+            <span class="title">Facebook</span>
           </a>
         </li>
         <li>
           <a class="link link--wide" href="https://g.page/r/Cay3l_S3LwZ9EBM/review">
-            <span class="title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.5l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/>
-              </svg>
-              Gi oss en anmeldelse på Google
-            </span>
+            <span class="title">Gi oss en anmeldelse på Google</span>
           </a>
         </li>
       </ul>
-
-      <img class="bouquet" src="assets/flowers.png" width="1200" height="793" alt="" aria-hidden="true">
     </main>
 
-    <footer>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Paris%20Nails%2C%20Grova%2040%2C%205600%20Norheimsund">Grova 40, 5600 Norheimsund</a><br>
-      <a href="tel:+4740327078">Tlf. 403 27 078</a>
-    </footer>
+    <div class="spray-wrap">
+      <img class="spray" src="assets/spray.svg" width="600" height="480" alt="" aria-hidden="true">
+      <img class="spray spray--top" src="assets/spray.svg" width="600" height="480" alt="" aria-hidden="true">
+    </div>
   </div>
 </body>
 </html>
