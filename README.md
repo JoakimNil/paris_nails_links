@@ -2,7 +2,7 @@
 
 A one-page link site for Paris Nails, Norheimsund: booking, phone, directions, Instagram, Facebook and Google reviews.
 
-It is a single static `index.html` with no build step. The gold line-art flowers are inline SVG.
+It is a single static `index.html` with no build step.
 
 ## Publish with GitHub Pages
 
@@ -23,5 +23,6 @@ If the site ends up at a different address (for example a custom domain), update
 | --- | --- |
 | `index.html` | The page |
 | `assets/logo.png`, `assets/logo.webp` | Logo with a transparent background |
+| `assets/flowers.png` | Gold line-art bouquet |
 | `assets/og-image.png` | Preview image when the link is shared |
 | `assets/favicon.svg`, `assets/apple-touch-icon.png` | Browser tab and home-screen icons |
