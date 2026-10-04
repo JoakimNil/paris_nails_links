@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Paris Nails – manikyr og pedikyr i Norheimsund</title>
+  <meta name="description" content="Bestill time hos Paris Nails, Grova 40 i Norheimsund. Ring 403 27 078, eller følg oss på Instagram og Facebook.">
+  <meta name="theme-color" content="#F9EAEA">
+  <meta name="color-scheme" content="light">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paris Nails – manikyr og pedikyr i Norheimsund">
+  <meta property="og:description" content="Bestill time, ring oss eller finn veien til Grova 40.">
+  <meta property="og:image" content="https://joakimnil.github.io/paris_nails_links/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blush: #F9EAEA;        /* page */
+      --white: #FFFDFC;        /* card, like the price list */
+      --pill: #F7DADA;         /* price-tag pink */
+      --pill-hover: #F3CFCF;
+      --line: #B8955A;         /* gold line art */
+      --line-faint: #DCC395;
+      --gold: #8F7227;         /* logo foil */
+      --ink: #3D3133;
+
+      --font: "Marcellus", "Didot", "Bodoni 72", Georgia, serif;
+      --column: min(100% - 32px, 400px);
+      --ease-out: cubic-bezier(.22, .8, .3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      background: var(--blush);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ---------- gold line art ---------- */
+    .art {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .art .ln {
+      fill: none;
+      stroke: var(--line);
+      stroke-width: 1.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .art .ln.fill { fill: var(--blush); }
+    .art .ln.thin { stroke-width: .8; }
+    .art .dot { fill: var(--line); }
+
+    .art--faint .ln { stroke: var(--line-faint); stroke-width: .55; }
+    .art--faint .ln.thin { stroke-width: .4; }
+    .art--faint .dot { fill: var(--line-faint); }
+
+    .sprig--top    { top: -22px;  right: calc(50% - 222px); width: 240px; }
+    .sprig--bottom { bottom: -14px; left: calc(50% - 236px); width: 180px; }
+    .bloom--a { top: -96px;    left: calc(50% - 300px); width: 240px; transform: rotate(12deg); }
+    .bloom--b { bottom: -130px; right: calc(50% - 300px); width: 270px; transform: rotate(-8deg); }
+    .art--faint { --faint: .55; opacity: .55; }
+
+    /* ---------- content ---------- */
+    main {
+      position: relative;
+      z-index: 1;
+      width: var(--column);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 124px 0 28px;
+    }
+    /* sit a little above centre on tall screens */
+    main::before, main::after { content: ""; }
+    main::before { flex: 1; }
+    main::after  { flex: 2.5; }
+
+    .logo {
+      width: 100%;
+      max-width: 340px;
+      margin: 0;
+    }
+    .logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tagline {
+      margin: 14px 0 0;
+      font-size: 1rem;
+      letter-spacing: .08em;
+      color: var(--ink);
+      opacity: .75;
+    }
+
+    .links {
+      list-style: none;
+      margin: 28px 0 0;
+      padding: 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .links li { display: contents; }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      text-align: center;
+      color: var(--ink);
+      background: var(--pill);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, .7) inset,
+        0 6px 16px -8px rgba(201, 120, 125, .55);
+      transition: background-color .2s ease, box-shadow .2s ease, transform .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .link:hover {
+      background: var(--pill-hover);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, .7) inset,
+        0 8px 20px -8px rgba(201, 120, 125, .7);
+    }
+    .link:active { transform: scale(.98); }
+    .link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .title {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 1.0625rem;
+      line-height: 1.25;
+    }
+    .title svg {
+      width: 19px;
+      height: 19px;
+      flex: none;
+      color: var(--gold);
+    }
+    .sub {
+      font-size: .8125rem;
+      letter-spacing: .02em;
+      opacity: .72;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    .link--wide { grid-column: 1 / -1; }
+
+    /* booking: white card with a gold double rule, like the price list */
+    .link--book {
+      grid-column: 1 / -1;
+      min-height: 78px;
+      margin-bottom: 4px;
+      background: var(--white);
+      box-shadow:
+        0 0 0 1.5px var(--line),
+        inset 0 0 0 4px var(--white),
+        inset 0 0 0 5px rgba(184, 149, 90, .35),
+        0 10px 26px -12px rgba(201, 120, 125, .6);
+    }
+    .link--book:hover {
+      background: #FFF7F6;
+      box-shadow:
+        0 0 0 2px var(--line),
+        inset 0 0 0 4px #FFF7F6,
+        inset 0 0 0 5px rgba(184, 149, 90, .5),
+        0 12px 30px -12px rgba(201, 120, 125, .7);
+    }
+    .link--book .title { font-size: 1.375rem; gap: 11px; }
+    .link--book .title svg { width: 22px; height: 22px; }
+    .link--book .sub { font-size: .875rem; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 0 16px calc(28px + env(safe-area-inset-bottom));
+      text-align: center;
+      font-size: .875rem;
+      line-height: 1.7;
+    }
+    footer a {
+      color: var(--ink);
+      text-decoration: none;
+      opacity: .78;
+    }
+    footer a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+    footer a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+
+    /* ---------- the one orchestrated moment: the gold lines draw in ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .sprig .ln {
+        stroke-dasharray: 1 2;
+        stroke-dashoffset: 1;
+        animation: draw 1.5s var(--ease-out) forwards;
+        animation-delay: calc(.15s + var(--i, 0) * 35ms);
+      }
+      .sprig .dot {
+        opacity: 0;
+        animation: fade .6s ease 1.5s forwards;
+      }
+      .art--faint {
+        opacity: 0;
+        animation: fade-faint 2.4s ease .3s forwards;
+      }
+      .logo, .tagline, .links, footer {
+        opacity: 0;
+        animation: rise .9s var(--ease-out) forwards;
+      }
+      .logo    { animation-delay: .2s; }
+      .tagline { animation-delay: .45s; }
+      .links   { animation-delay: .6s; }
+      footer   { animation-delay: .9s; }
+
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+      @keyframes fade { to { opacity: 1; } }
+      @keyframes fade-faint { to { opacity: var(--faint, .55); } }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(8px); filter: blur(3px); }
+        to   { opacity: 1; transform: none; filter: none; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .link { transition: none; }
+    }
+
+    @media (min-width: 640px) {
+      main { padding-top: 160px; }
+      .logo { max-width: 360px; }
+      .sprig--top    { top: 0; width: 360px; right: calc(50% - 330px); }
+      .sprig--bottom { width: 260px; left: calc(50% - 420px); bottom: 0; }
+      .bloom--a { width: 380px; left: calc(50% - 540px); top: -120px; }
+      .bloom--b { width: 420px; right: calc(50% - 580px); bottom: -140px; }
+      .art--faint { --faint: .75; opacity: .75; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <svg class="art art--faint bloom--a" viewBox="-60 -60 120 120" aria-hidden="true" focusable="false">
+      <g transform="translate(0 0) rotate(0) scale(1)">
+      <path class="ln fill" pathLength="1" style="--i:0" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(0.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:1" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(22.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:2" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(45.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:3" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(67.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:4" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(90.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:5" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(112.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:6" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(135.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:7" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(157.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:8" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(180.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:9" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(202.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:10" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(225.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:11" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(247.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:12" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(270.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:13" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(292.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:14" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(315.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:15" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(337.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:16" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(15)"/>
+      <path class="ln fill" pathLength="1" style="--i:17" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(45)"/>
+      <path class="ln fill" pathLength="1" style="--i:18" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(75)"/>
+      <path class="ln fill" pathLength="1" style="--i:19" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(105)"/>
+      <path class="ln fill" pathLength="1" style="--i:20" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(135)"/>
+      <path class="ln fill" pathLength="1" style="--i:21" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(165)"/>
+      <path class="ln fill" pathLength="1" style="--i:22" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(195)"/>
+      <path class="ln fill" pathLength="1" style="--i:23" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(225)"/>
+      <path class="ln fill" pathLength="1" style="--i:24" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(255)"/>
+      <path class="ln fill" pathLength="1" style="--i:25" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(285)"/>
+      <path class="ln fill" pathLength="1" style="--i:26" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(315)"/>
+      <path class="ln fill" pathLength="1" style="--i:27" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(345)"/>
+      <path class="ln fill" pathLength="1" style="--i:28" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(10)"/>
+      <path class="ln fill" pathLength="1" style="--i:29" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(55)"/>
+      <path class="ln fill" pathLength="1" style="--i:30" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(100)"/>
+      <path class="ln fill" pathLength="1" style="--i:31" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(145)"/>
+      <path class="ln fill" pathLength="1" style="--i:32" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(190)"/>
+      <path class="ln fill" pathLength="1" style="--i:33" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(235)"/>
+      <path class="ln fill" pathLength="1" style="--i:34" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(280)"/>
+      <path class="ln fill" pathLength="1" style="--i:35" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(325)"/>
+      <circle class="ln fill" r="7"/>
+      <circle class="dot" cx="0" cy="3.6" r=".9"/>
+      <circle class="dot" cx="2.12" cy="2.91" r=".9"/>
+      <circle class="dot" cx="3.42" cy="1.11" r=".9"/>
+      <circle class="dot" cx="3.42" cy="-1.11" r=".9"/>
+      <circle class="dot" cx="2.12" cy="-2.91" r=".9"/>
+      <circle class="dot" cx="0" cy="-3.6" r=".9"/>
+      <circle class="dot" cx="-2.12" cy="-2.91" r=".9"/>
+      <circle class="dot" cx="-3.42" cy="-1.11" r=".9"/>
+      <circle class="dot" cx="-3.42" cy="1.11" r=".9"/>
+      <circle class="dot" cx="-2.12" cy="2.91" r=".9"/>
+      </g>
+    </svg>
+    <svg class="art art--faint bloom--b" viewBox="-60 -60 120 120" aria-hidden="true" focusable="false">
+      <g transform="translate(0 0) rotate(0) scale(1)">
+      <path class="ln fill" pathLength="1" style="--i:0" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(0.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:1" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(22.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:2" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(45.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:3" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(67.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:4" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(90.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:5" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(112.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:6" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(135.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:7" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(157.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:8" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(180.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:9" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(202.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:10" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(225.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:11" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(247.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:12" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(270.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:13" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(292.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:14" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(315.0)"/>
+      <path class="ln fill" pathLength="1" style="--i:15" d="M0-14C-9-22-11-42-4-52C-2-55 2-55 4-52C11-42 9-22 0-14Z" transform="rotate(337.5)"/>
+      <path class="ln fill" pathLength="1" style="--i:16" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(15)"/>
+      <path class="ln fill" pathLength="1" style="--i:17" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(45)"/>
+      <path class="ln fill" pathLength="1" style="--i:18" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(75)"/>
+      <path class="ln fill" pathLength="1" style="--i:19" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(105)"/>
+      <path class="ln fill" pathLength="1" style="--i:20" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(135)"/>
+      <path class="ln fill" pathLength="1" style="--i:21" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(165)"/>
+      <path class="ln fill" pathLength="1" style="--i:22" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(195)"/>
+      <path class="ln fill" pathLength="1" style="--i:23" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(225)"/>
+      <path class="ln fill" pathLength="1" style="--i:24" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(255)"/>
+      <path class="ln fill" pathLength="1" style="--i:25" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(285)"/>
+      <path class="ln fill" pathLength="1" style="--i:26" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(315)"/>
+      <path class="ln fill" pathLength="1" style="--i:27" d="M0-10C-7-17-9-31-3-38C-1-40 1-40 3-38C9-31 7-17 0-10Z" transform="rotate(345)"/>
+      <path class="ln fill" pathLength="1" style="--i:28" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(10)"/>
+      <path class="ln fill" pathLength="1" style="--i:29" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(55)"/>
+      <path class="ln fill" pathLength="1" style="--i:30" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(100)"/>
+      <path class="ln fill" pathLength="1" style="--i:31" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(145)"/>
+      <path class="ln fill" pathLength="1" style="--i:32" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(190)"/>
+      <path class="ln fill" pathLength="1" style="--i:33" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(235)"/>
+      <path class="ln fill" pathLength="1" style="--i:34" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(280)"/>
+      <path class="ln fill" pathLength="1" style="--i:35" d="M0-6C-5-11-6-20-2-24C-1-25 1-25 2-24C6-20 5-11 0-6Z" transform="rotate(325)"/>
+      <circle class="ln fill" r="7"/>
+      <circle class="dot" cx="0" cy="3.6" r=".9"/>
+      <circle class="dot" cx="2.12" cy="2.91" r=".9"/>
+      <circle class="dot" cx="3.42" cy="1.11" r=".9"/>
+      <circle class="dot" cx="3.42" cy="-1.11" r=".9"/>
+      <circle class="dot" cx="2.12" cy="-2.91" r=".9"/>
+      <circle class="dot" cx="0" cy="-3.6" r=".9"/>
+      <circle class="dot" cx="-2.12" cy="-2.91" r=".9"/>
+      <circle class="dot" cx="-3.42" cy="-1.11" r=".9"/>
+      <circle class="dot" cx="-3.42" cy="1.11" r=".9"/>
+      <circle class="dot" cx="-2.12" cy="2.91" r=".9"/>
+      </g>
+    </svg>
+
+    <svg class="art sprig sprig--top" viewBox="0 -10 320 210" aria-hidden="true" focusable="false">
+      <path class="ln" pathLength="1" style="--i:0" d="M334 14C290 22 246 42 208 76"/>
+      <path class="ln" pathLength="1" style="--i:1" d="M208 76C186 96 172 114 160 130"/>
+      <path class="ln" pathLength="1" style="--i:2" d="M294.56 24.49C284.56 10.49 236 10 220 8"/>
+      <path class="ln" pathLength="1" style="--i:3" d="M214 70C226 84 232 100 232 118"/>
+      <g transform="translate(318.17 17.4) rotate(204.05) scale(0.85 0.85)">
+      <path class="ln fill" pathLength="1" style="--i:4" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:5" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(284.17 28.43) rotate(120.02) scale(0.78 -0.78)">
+      <path class="ln fill" pathLength="1" style="--i:6" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:7" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(243.66 49.13) rotate(185.88) scale(0.7 0.7)">
+      <path class="ln fill" pathLength="1" style="--i:8" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:9" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(187.58 96.27) rotate(94.65) scale(0.6 -0.6)">
+      <path class="ln fill" pathLength="1" style="--i:10" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:11" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(220 8) rotate(-78) scale(0.9)">
+      <path class="ln fill" pathLength="1" style="--i:12" d="M0 0C-7-6-9-19-4-31C-2-36 2-36 4-31C9-19 7-6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:13" d="M0-3C1.5-13 1.5-23 0-33"/>
+      </g>
+      <g transform="translate(232 118) rotate(178) scale(0.74)">
+      <path class="ln fill" pathLength="1" style="--i:14" d="M0 0C-7-6-9-19-4-31C-2-36 2-36 4-31C9-19 7-6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:15" d="M0-3C1.5-13 1.5-23 0-33"/>
+      </g>
+      <g transform="translate(156 134) rotate(-30) scale(1 0.8)">
+      <path class="ln fill" pathLength="1" style="--i:16" d="M0 0C-10-10-16-29-12-43C-10-50-5-55 1-60C2-54 6-48 9-42C15-29 10-10 0 0Z" transform="rotate(8)"/>
+      <path class="ln thin" pathLength="1" style="--i:17" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(8)"/>
+      <path class="ln fill" pathLength="1" style="--i:18" d="M0 0C-10-10-16-29-12-43C-10-50-5-55 1-60C2-54 6-48 9-42C15-29 10-10 0 0Z" transform="rotate(128)"/>
+      <path class="ln thin" pathLength="1" style="--i:19" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(128)"/>
+      <path class="ln fill" pathLength="1" style="--i:20" d="M0 0C-10-10-16-29-12-43C-10-50-5-55 1-60C2-54 6-48 9-42C15-29 10-10 0 0Z" transform="rotate(248)"/>
+      <path class="ln thin" pathLength="1" style="--i:21" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(248)"/>
+      <path class="ln fill" pathLength="1" style="--i:22" d="M0 0C-8-10-13-27-9-40C-7-47-3-51 1-55C2-50 5-45 7-39C12-27 8-10 0 0Z" transform="rotate(56)"/>
+      <path class="ln thin" pathLength="1" style="--i:23" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(56)"/>
+      <path class="ln fill" pathLength="1" style="--i:24" d="M0 0C-8-10-13-27-9-40C-7-47-3-51 1-55C2-50 5-45 7-39C12-27 8-10 0 0Z" transform="rotate(176)"/>
+      <path class="ln thin" pathLength="1" style="--i:25" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(176)"/>
+      <path class="ln fill" pathLength="1" style="--i:26" d="M0 0C-8-10-13-27-9-40C-7-47-3-51 1-55C2-50 5-45 7-39C12-27 8-10 0 0Z" transform="rotate(296)"/>
+      <path class="ln thin" pathLength="1" style="--i:27" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(296)"/>
+      <path class="ln thin" pathLength="1" style="--i:28" d="M0 0Q-9.49 -9.64 -22.98 -19.28"/>
+      <ellipse class="dot" style="--i:29" cx="-22.98" cy="-19.28" rx="1.3" ry="2.8" transform="rotate(-30 -22.98 -19.28)"/>
+      <path class="ln thin" pathLength="1" style="--i:29" d="M0 0Q-3.81 -15.97 -11.63 -31.95"/>
+      <ellipse class="dot" style="--i:30" cx="-11.63" cy="-31.95" rx="1.3" ry="2.8" transform="rotate(0 -11.63 -31.95)"/>
+      <path class="ln thin" pathLength="1" style="--i:30" d="M0 0Q1.3 -18.71 6.6 -37.42"/>
+      <ellipse class="dot" style="--i:31" cx="6.6" cy="-37.42" rx="1.3" ry="2.8" transform="rotate(30 6.6 -37.42)"/>
+      <path class="ln thin" pathLength="1" style="--i:31" d="M0 0Q7.64 -11.49 19.28 -22.98"/>
+      <ellipse class="dot" style="--i:32" cx="19.28" cy="-22.98" rx="1.3" ry="2.8" transform="rotate(60 19.28 -22.98)"/>
+      <path class="ln thin" pathLength="1" style="--i:32" d="M0 0Q-14.42 -4.4 -32.84 -8.8"/>
+      <ellipse class="dot" style="--i:33" cx="-32.84" cy="-8.8" rx="1.3" ry="2.8" transform="rotate(-55 -32.84 -8.8)"/>
+      <path class="ln thin" pathLength="1" style="--i:33" d="M0 0Q15.22 -8.03 34.44 -16.06"/>
+      <ellipse class="dot" style="--i:34" cx="34.44" cy="-16.06" rx="1.3" ry="2.8" transform="rotate(85 34.44 -16.06)"/>
+      </g>
+    </svg>
+
+    <main>
+      <h1 class="logo">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp">
+          <img src="assets/logo.png" width="1312" height="348" alt="Paris Nails – manikyr og pedikyr">
+        </picture>
+      </h1>
+
+      <p class="tagline">Fra klassisk til kreativt</p>
+
+      <ul class="links">
+        <li>
+          <a class="link link--book" href="https://booksalon.no/paris-nails">
+            <span class="title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="5" width="17" height="15.5" rx="3"/>
+                <path d="M3.5 10h17M8 3v4M16 3v4"/>
+                <path d="M12 12.6l.95 1.9 2.1.3-1.5 1.5.35 2.1-1.9-1-1.9 1 .35-2.1-1.5-1.5 2.1-.3z" fill="currentColor" stroke="none"/>
+              </svg>
+              Bestill time
+            </span>
+            <span class="sub">Se ledige timer hos Booksalon</span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="tel:+4740327078">
+            <span class="title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6.6 3.5h2.6l1.4 4.1-2 1.4a12 12 0 0 0 6.4 6.4l1.4-2 4.1 1.4v2.6a2 2 0 0 1-2.2 2A16.4 16.4 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/>
+              </svg>
+              Ring oss
+            </span>
+            <span class="sub">403 27 078</span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Paris%20Nails%2C%20Grova%2040%2C%205600%20Norheimsund">
+            <span class="title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/>
+                <circle cx="12" cy="10" r="2.4"/>
+              </svg>
+              Finn oss
+            </span>
+            <span class="sub">Grova 40</span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://www.instagram.com/parisnails.norheimsund/">
+            <span class="title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+                <circle cx="12" cy="12" r="3.9"/>
+                <circle cx="17.1" cy="6.9" r=".6" fill="currentColor"/>
+              </svg>
+              Instagram
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://www.facebook.com/ParisNails.Norheimsund/">
+            <span class="title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14.5 20.5v-7h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4a20 20 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H9v3h2.5v7"/>
+              </svg>
+              Facebook
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="link link--wide" href="https://g.page/r/Cay3l_S3LwZ9EBM/review">
+            <span class="title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.5l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/>
+              </svg>
+              Gi oss en anmeldelse på Google
+            </span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <svg class="art sprig sprig--bottom" viewBox="-24 0 190 170" aria-hidden="true" focusable="false">
+      <path class="ln" pathLength="1" style="--i:0" d="M-24 152C16 140 52 120 84 92"/>
+      <path class="ln" pathLength="1" style="--i:1" d="M84 92C102 76 114 60 122 44"/>
+      <path class="ln" pathLength="1" style="--i:2" d="M50 124C64 132 72 142 76 156"/>
+      <g transform="translate(-0.48 143.84) rotate(-59.6) scale(0.72 -0.72)">
+      <path class="ln fill" pathLength="1" style="--i:3" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:4" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(38.37 124.94) rotate(7.7) scale(0.66 0.66)">
+      <path class="ln fill" pathLength="1" style="--i:5" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:6" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(102.85 72.8) rotate(-87.8) scale(0.55 -0.55)">
+      <path class="ln fill" pathLength="1" style="--i:7" d="M0 0C15-12 40-16 64-6C42 3 17 6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:8" d="M3-.6C22-5 43-7.5 61-6.2"/>
+      </g>
+      <g transform="translate(76 156) rotate(172) scale(0.7)">
+      <path class="ln fill" pathLength="1" style="--i:9" d="M0 0C-7-6-9-19-4-31C-2-36 2-36 4-31C9-19 7-6 0 0Z"/>
+      <path class="ln thin" pathLength="1" style="--i:10" d="M0-3C1.5-13 1.5-23 0-33"/>
+      </g>
+      <g transform="translate(126 40) rotate(24) scale(0.82 0.66)">
+      <path class="ln fill" pathLength="1" style="--i:11" d="M0 0C-10-10-16-29-12-43C-10-50-5-55 1-60C2-54 6-48 9-42C15-29 10-10 0 0Z" transform="rotate(8)"/>
+      <path class="ln thin" pathLength="1" style="--i:12" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(8)"/>
+      <path class="ln fill" pathLength="1" style="--i:13" d="M0 0C-10-10-16-29-12-43C-10-50-5-55 1-60C2-54 6-48 9-42C15-29 10-10 0 0Z" transform="rotate(128)"/>
+      <path class="ln thin" pathLength="1" style="--i:14" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(128)"/>
+      <path class="ln fill" pathLength="1" style="--i:15" d="M0 0C-10-10-16-29-12-43C-10-50-5-55 1-60C2-54 6-48 9-42C15-29 10-10 0 0Z" transform="rotate(248)"/>
+      <path class="ln thin" pathLength="1" style="--i:16" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(248)"/>
+      <path class="ln fill" pathLength="1" style="--i:17" d="M0 0C-8-10-13-27-9-40C-7-47-3-51 1-55C2-50 5-45 7-39C12-27 8-10 0 0Z" transform="rotate(56)"/>
+      <path class="ln thin" pathLength="1" style="--i:18" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(56)"/>
+      <path class="ln fill" pathLength="1" style="--i:19" d="M0 0C-8-10-13-27-9-40C-7-47-3-51 1-55C2-50 5-45 7-39C12-27 8-10 0 0Z" transform="rotate(176)"/>
+      <path class="ln thin" pathLength="1" style="--i:20" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(176)"/>
+      <path class="ln fill" pathLength="1" style="--i:21" d="M0 0C-8-10-13-27-9-40C-7-47-3-51 1-55C2-50 5-45 7-39C12-27 8-10 0 0Z" transform="rotate(296)"/>
+      <path class="ln thin" pathLength="1" style="--i:22" d="M0-5C-1.5-21-1-38 1-52" transform="rotate(296)"/>
+      <path class="ln thin" pathLength="1" style="--i:23" d="M0 0Q-9.49 -9.64 -22.98 -19.28"/>
+      <ellipse class="dot" style="--i:24" cx="-22.98" cy="-19.28" rx="1.3" ry="2.8" transform="rotate(-30 -22.98 -19.28)"/>
+      <path class="ln thin" pathLength="1" style="--i:24" d="M0 0Q-3.81 -15.97 -11.63 -31.95"/>
+      <ellipse class="dot" style="--i:25" cx="-11.63" cy="-31.95" rx="1.3" ry="2.8" transform="rotate(0 -11.63 -31.95)"/>
+      <path class="ln thin" pathLength="1" style="--i:25" d="M0 0Q1.3 -18.71 6.6 -37.42"/>
+      <ellipse class="dot" style="--i:26" cx="6.6" cy="-37.42" rx="1.3" ry="2.8" transform="rotate(30 6.6 -37.42)"/>
+      <path class="ln thin" pathLength="1" style="--i:26" d="M0 0Q7.64 -11.49 19.28 -22.98"/>
+      <ellipse class="dot" style="--i:27" cx="19.28" cy="-22.98" rx="1.3" ry="2.8" transform="rotate(60 19.28 -22.98)"/>
+      <path class="ln thin" pathLength="1" style="--i:27" d="M0 0Q-14.42 -4.4 -32.84 -8.8"/>
+      <ellipse class="dot" style="--i:28" cx="-32.84" cy="-8.8" rx="1.3" ry="2.8" transform="rotate(-55 -32.84 -8.8)"/>
+      <path class="ln thin" pathLength="1" style="--i:28" d="M0 0Q15.22 -8.03 34.44 -16.06"/>
+      <ellipse class="dot" style="--i:29" cx="34.44" cy="-16.06" rx="1.3" ry="2.8" transform="rotate(85 34.44 -16.06)"/>
+      </g>
+    </svg>
+
+    <footer>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Paris%20Nails%2C%20Grova%2040%2C%205600%20Norheimsund">Grova 40, 5600 Norheimsund</a><br>
+      <a href="tel:+4740327078">Tlf. 403 27 078</a>
+    </footer>
+  </div>
+</body>
+</html>
